@@ -16,13 +16,23 @@
 
 // message on the console
 
-
-
 function askQuestion(prompt) {
   let rlSync = require('readline-sync');
   name = rlSync.question(prompt);
   return name;
 }
 
-password = askQuestion("What is the password?")
-console.log(password);
+const password = 'sup';
+
+for (let counter = 0; counter < 3; counter += 1) {
+  answer = askQuestion('What is the password? ');
+  if (password === answer) {
+    console.log('You have successfully logged in.');
+    break;
+  }
+}
+
+console.log('You have been denied access.');
+
+
+
