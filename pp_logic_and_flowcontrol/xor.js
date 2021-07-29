@@ -1,5 +1,5 @@
 function isXor(first_arg, second_arg) {
-  if ((!first_arg  && second_arg) || (!second_arg  && first_arg) ) {
+  if ((!first_arg && second_arg) || (!second_arg && first_arg) ) {
     return console.log(true);
   }
   return console.log(false);
