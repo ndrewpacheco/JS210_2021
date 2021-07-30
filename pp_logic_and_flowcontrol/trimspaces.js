@@ -1,7 +1,4 @@
 function trim(str) {
-// if first char is whitespace, remove it. Remove each consectuive ws
-// until we see a letter
-// store index of where the first letter is
   let firstIndex = -1;
   do {
     firstIndex += 1;
@@ -11,11 +8,6 @@ function trim(str) {
   do {
     lastIndex -= 1;
   } while (str[lastIndex] === ' ')
-
-  // trimmedString = [];
-  // for (let index = firstIndex; index <= lastIndex; index += 1) {
-  //   trimmedString.push(str[index]);
-  // }
 
   trimmedString = '';
   for (let index = firstIndex; index <= lastIndex; index += 1) {
