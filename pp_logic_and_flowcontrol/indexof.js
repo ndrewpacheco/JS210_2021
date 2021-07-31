@@ -26,10 +26,10 @@ function lastIndexOf(firstString, secondString) {
 function reverseString(str) {
   return str.split('').reverse().join('');
 }
-console.log(indexOf('Some strings', 's'));                      // 5
-console.log(indexOf('Blue Whale', 'Whale'));                    // 5
-console.log(indexOf('Blue Whale', 'Blute'));                    // -1
-console.log(indexOf('Blue Whale', 'leB'));                      // -1
+indexOf('Some strings', 's');                      // 5
+indexOf('Blue Whale', 'Whale');                    // 5
+indexOf('Blue Whale', 'Blute');                    // -1
+indexOf('Blue Whale', 'leB');                      // -1
 
 lastIndexOf('Some strings', 's');                  // 11
 lastIndexOf('Blue Whale, Killer Whale', 'Whale');  // 19
