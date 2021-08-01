@@ -1,7 +1,7 @@
 WHITESPACE = ' ';
 HYPHEN = '-';
 function logInBox(str) {
-  if (str === '') str = WHITESPACE;
+
   let whiteSpace = extraSpace(str.length, WHITESPACE);
   let dottedLine = extraSpace(str.length, HYPHEN);
 
@@ -13,8 +13,8 @@ function logInBox(str) {
 };
 
 function extraSpace(amount, char) {
-  let result = char;
-  for (let i = 0; i < amount - 1; i += 1) {
+  let result = '';
+  for (let i = 0; i < amount; i += 1) {
     result += char;
   }
   return result;
