@@ -21,12 +21,13 @@ function splice(array, start, deleteCount, ...elements) {
   let limit = deleteCount < originalLength ? deleteCount : originalLength - 1;
   let newArr = [];
 
+
   if (deleteCount === 0 && elements.length > 0) {
     array.length += elements.length;
-    for (let index = array.length - 1; index >= 0; index -= 1) {
+    for (let index = array.length - 1; index >= start; index -= 1) {
       if (index === start) {
         array[index] = elements[0];
-      } else if (index !== start - 1) {
+      } else {
         array[index] = array[index - 1];
       }
     }
