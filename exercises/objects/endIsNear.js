@@ -1,6 +1,7 @@
 function penultimate(string) {
-  return string.split(' ')[-2];
+  string = string.split(' ');
+  return string[string.length - 2];
 }
 
-penultimate('last word');                    // expected: "last"
-penultimate('Launch School is great!');      // expected: "is"
+console.log(penultimate('last word'));                    // expected: "last"
+console.log(penultimate('Launch School is great!'));      // expected: "is"

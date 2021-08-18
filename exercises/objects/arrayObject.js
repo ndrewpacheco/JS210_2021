@@ -15,3 +15,4 @@ console.log(myArray['e']);
 // 'e': 5
 console.log(myArray);
 // ['a', 'b', 'c', 'f', '-1': 'd','e': 5]
+
