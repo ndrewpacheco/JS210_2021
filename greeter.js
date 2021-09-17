@@ -9,4 +9,3 @@ let firstName = getName("What's your first name? ");
 let lastName = getName("What's your last name? ");
 name = firstName + ' ' + lastName;
 console.log(`Hello, ${name}!`);
-
