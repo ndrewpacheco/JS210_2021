@@ -18,3 +18,6 @@ function evenOrOdd(num) {
   num % 2 === 0 ? console.log('even') : console.log('odd')
 
 }
+
+evenOrOdd(3);
+evenOrOdd(4);
