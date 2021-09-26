@@ -1,9 +1,18 @@
-let add = (a, b) => a + b;
-let getNumber = (text) => {
-  let input = prompt(text);
-  return Number(input);
-};
+function randomNumberBetween(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
 
-let number1 = getNumber("Enter a number: ");
-let number2 = getNumber("Enter another number: ");
-console.log(add(number1, number2));
+// let tries = 0;
+let result = randomNumberBetween(1, 6);
+// tries += 1;
+
+// while (result <= 2) {
+//   result = randomNumberBetween(1, 6);
+//   tries += 1;
+// }
+
+let tries = 0;
+for (result; result <= 2; tries += 1) {
+   result = randomNumberBetween(1, 6);
+}
+console.log('It took ' + String(tries) + ' tries to get a number greater than 2');
