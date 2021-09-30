@@ -1,13 +1,13 @@
-function findIntegers(things) {
-  return things.filter(element => Number.isInteger(element));
+function includesThree(numbers) {
+  return numbers.includes(3);
 }
 
 
+let numbers1 = [1, 3, 5, 7, 9, 11];
+let numbers2 = [];
+let numbers3 = [2, 4, 6, 8];
 
 
-
-let things = [1, 'a', '1', 3, NaN, 3.1415, -4, null, false];
-let integers = findIntegers(things);
-console.log(integers); // => [1, 3, -4]
-
-
+console.log(includesThree(numbers1));
+console.log(includesThree(numbers2));
+console.log(includesThree(numbers3));
