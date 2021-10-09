@@ -1,10 +1,31 @@
-let a = 'outer';
+let basket = 'empty';
 
-function testScope() {
-  a = 'inner';
-  console.log(a);
+function goShopping() {
+  function shop1() {
+    basket = 'tv';
+  }
+
+  console.log(basket);
+
+  let shop2 = function() {
+    basket = 'computer';
+  };
+
+  const shop3 = () => {
+    let basket = 'play station';
+    console.log(basket);
+  };
+
+  shop1();
+  shop2();
+  shop3();
+
+  console.log(basket);
 }
 
-console.log(a);
-testScope();
-console.log(a);
+goShopping();
+
+
+'empty'
+'play station'
+'computer'
