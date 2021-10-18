@@ -1,4 +1,5 @@
-let x = '13';
-let y = 9;
+function average(a,b,c) {
+  return (a + b + c) / 3
+}
 
-console.log(x * y);
+console.log(average(1,234,4343343));
