@@ -1,5 +1,13 @@
-function average(a,b,c) {
-  return (a + b + c) / 3
+function average(values) {
+
+  let total = 0;
+  for (let index = 1; index < values.length; index += 1) {
+    total += values[index]
+  }
+
+  return total / values.length;
 }
 
-console.log(average(1,234,4343343));
+function sum(a, b, c) {
+  return a + b + c;
+}
