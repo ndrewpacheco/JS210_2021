@@ -1,13 +1,10 @@
-function average(values) {
+let a = 'outer';
 
-  let total = 0;
-  for (let index = 1; index < values.length; index += 1) {
-    total += values[index]
-  }
+console.log(a);
+setScope();
+console.log(a);
 
-  return total / values.length;
-}
+var setScope = function () {
+  a = 'inner';
+};
 
-function sum(a, b, c) {
-  return a + b + c;
-}
