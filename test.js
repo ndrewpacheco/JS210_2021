@@ -1,3 +1,4 @@
+
 let a = 'outer';
 
 console.log(a);
