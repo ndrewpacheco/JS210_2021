@@ -1,14 +1,31 @@
-function gcd(num1, num2) {
-  let denominator;
-  let largestNum  = num1 > num2 ? num1 : num2;
+function indexOf(firstString, secondString) {
+  for (let index = 0; index < firstString.length; index += 1) {
+    let matchingString = '';
+    for (let matchingIndex = index; matchingIndex < index + secondString.length; matchingIndex += 1) {
+      matchingString += firstString[matchingIndex];
+    }
 
-  for (let counter = 1; counter <= largestNum; counter += 1) {
-    if (num1 % counter == 0 && num2 % counter == 0) denominator = counter;
+    if (matchingString === secondString) return index;
   }
-
-  return denominator;
+  return -1;
 }
 
-console.log(gcd(12, 4));  // 4
-console.log(gcd(15, 10));  // 5
-console.log(gcd(9, 2));  // 1
+function lastIndexOf(firstString, secondString) {
+  for (let index = firstString.length - 1; index >= 0; index -= 1) {
+    let matchingString = '';
+    for (let matchingIndex = index; matchingIndex < index + secondString.length; matchingIndex += 1) {
+      matchingString += firstString[matchingIndex];
+    }
+    if (matchingString === secondString) return index;
+  }
+  return -1;
+}
+
+// console.log(indexOf('Some strings', 's'));                      // 5
+// console.log(indexOf('Blue Whale', 'Whale'));                    // 5
+// console.log(indexOf('Blue Whale', 'Blute'));                    // -1
+// console.log(indexOf('Blue Whale', 'leB'));                      // -1
+
+console.log(lastIndexOf('Some strings', 's'));                  // 11
+console.log(lastIndexOf('Blue Whale, Killer Whale', 'Whale'));  // 19
+console.log(lastIndexOf('Blue Whale, Killer Whale', 'all'));    // -1
