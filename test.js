@@ -1,36 +1,36 @@
-function substring(string, start, end = string.length) {
-  if (start > end) {
-    [start, end] = [end, start];
-  }
+function triangle(num) {
+  for (let counter = 0; counter < num; counter += 1) {
+    let whitespace = '';
+    let stars = '';
 
-  if (start < 0 || isNaN(start)) {
-    start = 0;
-  }
+    for (whiteCounter = (num - counter) - 1; whiteCounter > 0; whiteCounter -= 1) {
+      whitespace += '-';
+    }
+    do {
+      stars += '*'
+    } while (stars.length <= counter);
 
-  if (end < 0 || isNaN(end)) {
-    end = 0;
-  }
 
-  if (start === end) {
-    return '';
+    console.log(whitespace + stars);
   }
-
-  let result = '';
-  for (let index = start; index < end; index += 1) {
-    if (index >= string.length) break;
-    result += string[index];
-  }
-  return result;
 }
 
-let string = 'hello world';
+triangle(5);
 
-console.log(substring(string, 2, 4));    // "ll"
-console.log(substring(string, 4, 2));    // "ll"
-console.log(substring(string, 2, 2));    // ""
-console.log(substring(string, 0, -1));   // ""
+//     *
+//    **
+//   ***
+//  ****
+// *****
 
+triangle(9);
 
-console.log(substring(string, 2));       // "llo world"
-console.log(substring(string, 'a'));     // "hello world"
-console.log(substring(string, 8, 20));   // "rld"
+//         *
+//        **
+//       ***
+//      ****
+//     *****
+//    ******
+//   *******
+//  ********
+// *********
