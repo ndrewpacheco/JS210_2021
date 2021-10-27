@@ -1,36 +1,14 @@
-function triangle(num) {
-  for (let counter = 0; counter < num; counter += 1) {
-    let whitespace = '';
-    let stars = '';
-
-    for (whiteCounter = (num - counter) - 1; whiteCounter > 0; whiteCounter -= 1) {
-      whitespace += '-';
-    }
-    do {
-      stars += '*'
-    } while (stars.length <= counter);
-
-
-    console.log(whitespace + stars);
+let shift = (arr, value) => {
+  let shiftElement = arr[0];
+  for (index = 0; index < arr.length; index += 1) {
+    arr[index] = arr[index + 1];
   }
+  arr.length -= 1;
+  return shiftElement;
+
 }
 
-triangle(5);
 
-//     *
-//    **
-//   ***
-//  ****
-// *****
-
-triangle(9);
-
-//         *
-//        **
-//       ***
-//      ****
-//     *****
-//    ******
-//   *******
-//  ********
-// *********
+let count = [1, 2, 3];
+shift(count);           // 1
+count;                  // [ 2, 3 ]
