@@ -1,15 +1,18 @@
-function join(arr, str) {
-  let resultString = '';
+function concat(array1, ...args) {
+  let newArr = array1.slice();
 
-  for (let index = 0; index < arr.length; index += 1) {
-    resultString += arr[index];
-    if (index !== arr.length - 1) {
-      resultString += str;
+  args.forEach(function(arg) {
+    if (Array.isArray(arg)) {
+      arg.forEach(element => newArr.push(element));
+    } else {
+      newArr[newArr.length] = arg;
     }
-  }
+  });
 
-  return resultString;
+  return newArr;
 }
 
-join(['bri', 'tru', 'wha'], 'ck ');       // 'brick truck wha'
-join([1, 2, 3], ' and ');                 // '1 and 2 and 3'
+
+concat([1, 2, 3], [4, 5, 6], [7, 8, 9]);    // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+concat([1, 2], 'a', ['one', 'two']);        // [1, 2, "a", "one", "two"]
+concat([1, 2], ['three'], 4);               // [1, 2, "three", 4]
