@@ -1,4 +1,6 @@
 let today = new Date();
+let tomorrow = new Date(today.getTime());
+
 
 function dateSuffix(date) {
   if ([1, 21, 31].includes(date)) return String(date) + "st";
@@ -7,25 +9,23 @@ function dateSuffix(date) {
   return String(date) + "th";
 }
 
-function formattedDay() {
+function formattedDay(day) {
   let daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-  return "Today's day is " + daysOfWeek[today.getDay()] + ", "
+  return "Today's day is " + daysOfWeek[day.getDay()] + ", "
 }
 
-function formattedMonth() {
+function formattedMonth(day) {
   let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  return months[today.getMonth()];
+  return months[day.getMonth()];
 }
 
-function formattedDate() {
-  return formattedDay() + formattedMonth() + " the " + dateSuffix(today.getDate());
+function formattedDate(day) {
+  return formattedDay(day) + formattedMonth(day) + " the " + dateSuffix(day.getDate());
 }
 
 // console.log("Today's day is " + daysOfWeek[today.getDay()] + ", " +
 //                                 months[today.getMonth()] + " the " +
 //                                 dateSuffix(today.getDate()));
-console.log(formattedDate());
+console.log(formattedDate(tomorrow.setDate(32)));
 
-console.log(today.getYear());
-console.log(today.getFullYear());
 
