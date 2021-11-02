@@ -1,31 +1,24 @@
-let today = new Date();
-let tomorrow = new Date(today.getTime());
+function repeatedCharacters(str) {
+  let allChars = {};
+  str.split('').forEach(function(char) {
+    char = char.toLowerCase();
+    if (allChars[char]) {
+      allChars[char] += 1;
+    } else {
+      allChars[char] = 1;
+    }
+  });
 
+  let filterChars = Object.keys(allChars).filter(char => allChars[char] > 1);
+  let result = {};
 
-function dateSuffix(date) {
-  if ([1, 21, 31].includes(date)) return String(date) + "st";
-  if ([2, 22].includes(date)) return String(date) + "nd";
-  if ([3, 24].includes(date)) return String(date) + "rd";
-  return String(date) + "th";
+  filterChars.forEach(function(char){
+    result[char] = allChars[char];
+  });
+  console.log(result);
 }
-
-function formattedDay(day) {
-  let daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-  return "Today's day is " + daysOfWeek[day.getDay()] + ", "
-}
-
-function formattedMonth(day) {
-  let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  return months[day.getMonth()];
-}
-
-function formattedDate(day) {
-  return formattedDay(day) + formattedMonth(day) + " the " + dateSuffix(day.getDate());
-}
-
-// console.log("Today's day is " + daysOfWeek[today.getDay()] + ", " +
-//                                 months[today.getMonth()] + " the " +
-//                                 dateSuffix(today.getDate()));
-console.log(formattedDate(tomorrow.setDate(32)));
-
-
+repeatedCharacters('Programming');    // { r: 2, g: 2, m: 2 }
+repeatedCharacters('Combination');    // { o: 2, i: 2, n: 2 }
+repeatedCharacters('Pet');            // {}
+repeatedCharacters('Paper');          // { p: 2 }
+repeatedCharacters('Baseless');      // { s: 3, e: 2 }
