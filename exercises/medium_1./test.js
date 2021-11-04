@@ -1,20 +1,19 @@
-// Book:Flow Control Exercises
+(false && undefined);
+// false
+(false || undefined);
+// false
+((false && undefined) || (false || undefined));
+// undefined
+((false || undefined) || (false && undefined));
+// undefined
+((false && undefined) && (false || undefined));
+// false
+((false || undefined) && (false && undefined));
 
-// false || (true && false);
-// true || (1 + 2);
-// (1 + 2) || true;
-// true && (1 + 2);
-// false && (1 + 2);
-// (1 + 2) && true;
-// (32 * 4) >= 129;
-// false !== !true;
-// true === 4;
-// false === (847 === '847');
-// false === (847 == '847');
-// (!true || (!(100 / 5) === 20) || ((328 / 4) === 82)) || false;
+('a' || (false && undefined) || '');
 
-function evenOrOdd(num) {
+((false && undefined) || 'a' || '');
 
-  num % 2 === 0 ? console.log('even') : console.log('odd')
+('a' && (false || undefined) && '');
 
-}
+((false || undefined) && 'a' && '');
