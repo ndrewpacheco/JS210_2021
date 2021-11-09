@@ -1,17 +1,19 @@
-function doubleConsonants(str) {
-  let result = '';
-  str.split('').forEach(char => {
-    if (isValid(char)) result += char;
-    result += char;
-  });
-  console.log(result);
-}
-function isValid(char) {
-  let consonantRegex = /[bcdfghjklmnpqrstvwxyq]/gi;
-  return char.match(consonantRegex);
+function reverseSentence(str) {
+  console.log(str.split(' ').reverse().join(' '));
 }
 
-doubleConsonants('String');          // "SSttrrinngg"
-doubleConsonants('Hello-World!');    // "HHellllo-WWorrlldd!"
-doubleConsonants('July 4th');        // "JJullyy 4tthh"
-doubleConsonants('');                // ""
+reverseSentence('');                       // ""
+reverseSentence('Hello World');            // "World Hello"
+reverseSentence('Reverse these words');    // "words these Reverse"
+
+
+function reverseWords(words) {
+  let result = words.split(' ').map(word => {
+    return (word.length >= 5) ? word.split('').reverse().join('') : word;
+  })
+  console.log(result.join(' '));
+}
+
+reverseWords('Professional');             // "lanoisseforP"
+reverseWords('Walk around the block');    // "Walk dnuora the kcolb"
+reverseWords('Launch School');            // "hcnuaL loohcS"
